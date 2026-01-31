@@ -60,4 +60,5 @@ public class BoatController : MonoBehaviour
         rb.AddForce(forwardForce, ForceMode.Acceleration);
         rb.AddTorque(Vector3.up * move.x * TurningSpeed, ForceMode.Acceleration);
     }
+
 }
