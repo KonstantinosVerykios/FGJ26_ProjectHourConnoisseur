@@ -48,7 +48,7 @@ public class BoatController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+        // Check if boat.z vector and world z.vector dot product is  
 
         HandleMovement();
     }
