@@ -5,8 +5,6 @@ public class BuoancyObject : MonoBehaviour
 {
     public Transform[] floaters;
 
-    
-
     public float UndeWaterDrag = 3f;
     public float UndeWaterAngularDrag = 1f;
 
