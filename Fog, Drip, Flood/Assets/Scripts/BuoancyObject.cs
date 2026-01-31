@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BuoancyObject : MonoBehaviour
 {
+    public Transform[] floaters;
+
+    
 
     public float UndeWaterDrag = 3f;
     public float UndeWaterAngularDrag = 1f;
@@ -16,6 +19,7 @@ public class BuoancyObject : MonoBehaviour
 
     Rigidbody Rigidbody;
 
+    int FloatersUndewater;
     bool underwater;
 
     private void Start()
@@ -25,20 +29,25 @@ public class BuoancyObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float difference = transform.position.y - WaterHeight;
-
-        if(difference < 0)
+        FloatersUndewater = 0;
+        for (int i = 0; i < floaters.Length; i++)
         {
-            Rigidbody.AddForceAtPosition(Vector3.up * FloatPower * Mathf.Abs(difference), transform.position, ForceMode.Force);
-            if (!underwater)
+            float difference = floaters[i].position.y - WaterHeight;
+            if (difference < 0)
             {
-                underwater = true;
-                SwitchState(true);
+                Rigidbody.AddForceAtPosition(Vector3.up * FloatPower * Mathf.Abs(difference), floaters[i].position, ForceMode.Force);
+                FloatersUndewater += 1;
+                if (!underwater)
+                {
+                    underwater = true;
+                    SwitchState(true);
+                }
             }
-        }
-        else if (underwater){
-            underwater = false;
-            SwitchState(false);
+            if (underwater && FloatersUndewater == 0)
+            {
+                underwater = false;
+                SwitchState(false);
+            }
         }
     }
 
