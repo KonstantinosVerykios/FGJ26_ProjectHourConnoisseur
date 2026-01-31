@@ -27,7 +27,12 @@ public class OceanManager : MonoBehaviour
 
     public float WaterHeightAtPosition(Vector3 position)
     {
-        return ocean.position.y * wavesDisplacement.GetPixelBilinear(position.x * wavesFrequency, Time.time * wavesSpeed).g * wavesHeigth * ocean.localScale.x;
+        float u = (position.x * wavesFrequency) + Time.time * wavesSpeed;
+        float v = (position.z * wavesFrequency) + Time.time * wavesSpeed;
+
+        float waveSample = wavesDisplacement.GetPixelBilinear(u, v).g;
+
+        return ocean.position.y + waveSample * wavesHeigth * ocean.localScale.y;
     }
 
     void OnValidate()

@@ -15,7 +15,7 @@ public class BuoancyObject : MonoBehaviour
 
     public float FloatPower = 100f;
 
-    public float WaterHeight = 0f;
+    OceanManager oceanManager;
 
     Rigidbody Rigidbody;
 
@@ -25,6 +25,7 @@ public class BuoancyObject : MonoBehaviour
     private void Start()
     {
         Rigidbody = GetComponent<Rigidbody>();
+        oceanManager = FindAnyObjectByType<OceanManager>();
     }
 
     private void FixedUpdate()
@@ -32,7 +33,7 @@ public class BuoancyObject : MonoBehaviour
         FloatersUndewater = 0;
         for (int i = 0; i < floaters.Length; i++)
         {
-            float difference = floaters[i].position.y - WaterHeight;
+            float difference = floaters[i].position.y - oceanManager.WaterHeightAtPosition(floaters[i].position);
             if (difference < 0)
             {
                 Rigidbody.AddForceAtPosition(Vector3.up * FloatPower * Mathf.Abs(difference), floaters[i].position, ForceMode.Force);
