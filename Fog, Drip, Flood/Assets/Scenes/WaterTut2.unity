@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 1824793855}
   - component: {fileID: 1824793854}
   - component: {fileID: 1824793853}
+  - component: {fileID: 1824793859}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -575,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 1824793852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -343.5, y: 0, z: 0}
+  m_LocalPosition: {x: -343.5, y: 0, z: -206.4}
   m_LocalScale: {x: 6, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -586,6 +587,21 @@ Transform:
   - {fileID: 84602117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824793859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824793852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59b39fecd84d5c4a8a6f62a15e51f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatController
+  forwardForce: 100
+  turnTorque: 100
+  maxSpeed: 1000
 --- !u!1 &1854785061
 GameObject:
   m_ObjectHideFlags: 0
@@ -21065,8 +21081,8 @@ Transform:
   m_GameObject: {fileID: 1854785061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31, y: 0.0001, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalPosition: {x: -337.4, y: 0, z: 171.4}
+  m_LocalScale: {x: 1, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -21335,13 +21351,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117070687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14097439, y: 0.69291145, z: -0.14097439, w: 0.69291145}
-  m_LocalPosition: {x: -1.15, y: 4.85, z: 0.026}
+  m_LocalRotation: {x: 0.19936788, y: 0, z: 0, w: 0.97992474}
+  m_LocalPosition: {x: -0.008, y: 4.85, z: -2.34}
   m_LocalScale: {x: 0.16666667, y: 1, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824793858}
-  m_LocalEulerAnglesHint: {x: 23, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 23, y: 0, z: 0}
 --- !u!114 &2117070691
 MonoBehaviour:
   m_ObjectHideFlags: 0
