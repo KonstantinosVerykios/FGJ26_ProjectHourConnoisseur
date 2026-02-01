@@ -3,6 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public enum AudioSourcePositions { Paddle_L, Paddle_R, Player}
+    public enum BreathingStage { Calm, Heavy, Extra}
 
     [Header("AudioSO and -Containers")]
     [SerializeField] private AudioLibrarySO audioLibrary;
@@ -66,6 +67,10 @@ public class AudioManager : MonoBehaviour
             rightPaddleAudioSource.StopPlaying();
     }
 
+    public void SetBreathing(BreathingStage breathingStage)
+    {
+
+    }
     private AudioContainerSource GetAudioSource(AudioSourcePositions AudioSourcePosition)
         => AudioSourcePosition switch
         {
