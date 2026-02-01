@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -7,6 +8,14 @@ public class BoatController : MonoBehaviour
     [Header("Movement")]
     [SerializeField]private float MovingSpeed = 100f;
     [SerializeField] private float TurningSpeed = 100f;
+
+    [Header("Events")]
+    public UnityEvent<bool> PaddleStart;    // left = true, right = false
+    public UnityEvent<bool> PaddleStop;     // left = true, right = false
+
+    [Header("TrashCodeTM")]
+    bool _leftWasPressed;
+    bool _rightWasPressed;
 
     Rigidbody rb;
 
@@ -40,11 +49,30 @@ public class BoatController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext value)
     {
         move = value.ReadValue<Vector2>();
+
+        // send signal about what going on
+        _leftWasPressed = move.x < 0;
+        _rightWasPressed = move.x > 0;
+        PaddleStart.Invoke(_leftWasPressed);
     }
 
     public void OnMoveCancel(InputAction.CallbackContext value)
     {
         move = Vector2.zero;
+
+        // send signal about what going on
+        if (_leftWasPressed && !Keyboard.current.aKey.isPressed)
+        {
+            _leftWasPressed = false;
+            print("left released");
+            PaddleStop.Invoke(true);
+        }
+        else if (_rightWasPressed && !Keyboard.current.dKey.isPressed)
+        {
+            _rightWasPressed = false;
+            print("right released");
+            PaddleStop.Invoke(false);
+        }
     }
     private void FixedUpdate()
     {

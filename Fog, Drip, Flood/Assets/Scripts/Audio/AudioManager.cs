@@ -40,14 +40,30 @@ public class AudioManager : MonoBehaviour
         AudioContainer audioContainer = audioLibrary.GetAudioContainer("Paddle");
         leftPaddleAudioSource.audioContainer = audioContainer;
         rightPaddleAudioSource.audioContainer = audioContainer;
-        leftPaddleAudioSource.StartPlaying();
-        rightPaddleAudioSource.StartPlaying();
     }
 
     public void PlayAt(AudioSourcePositions AudioSourcePosition, AudioSO audio)
     {
         AudioContainerSource audioSource = GetAudioSource(AudioSourcePosition);
 
+    }
+
+    public void StartPaddle(bool startLeft)
+    {
+        print(startLeft);
+        if (startLeft)
+            leftPaddleAudioSource.StartPlaying();
+        else
+            rightPaddleAudioSource.StartPlaying();
+    }
+
+    public void StopPaddle(bool stopLeft)
+    {
+        print(stopLeft);
+        if (stopLeft)
+            leftPaddleAudioSource.StopPlaying();
+        else
+            rightPaddleAudioSource.StopPlaying();
     }
 
     private AudioContainerSource GetAudioSource(AudioSourcePositions AudioSourcePosition)
