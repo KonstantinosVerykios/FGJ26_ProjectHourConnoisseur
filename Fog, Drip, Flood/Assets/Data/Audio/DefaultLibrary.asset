@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfc8851a925f5c4c991a644c4ee9e9a, type: 3}
+  m_Name: DefaultLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::AudioLibrarySO
+  list:
+  - name: Ambience
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: 609f128a62e2cea4b82cc7bdc8b0cbd2, type: 3}
+      volume: 0.443
+      pitchVariance: 0
+  - name: Breathing_Calm
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: 60bba8a7607b4d641b2d9e6048e7ba68, type: 3}
+      - {fileID: 8300000, guid: 06fb1a04188e9e64faca3f1ac780e121, type: 3}
+      - {fileID: 8300000, guid: 1de90e0cad5b6274188906797aeb0503, type: 3}
+      - {fileID: 8300000, guid: db95857e1486e2a4ab593a1c260c6f4d, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Breathing_Heavy
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: 73f33a616fb464c44868a3f7c88d2023, type: 3}
+      - {fileID: 8300000, guid: bc96e8f6c1789b545b300a5dafcd7738, type: 3}
+      - {fileID: 8300000, guid: a3798db35a2699648b7217eea6492ba9, type: 3}
+      - {fileID: 8300000, guid: db7480cb990c22e4d8be4078eef76bf4, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Breathing_Extra
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: b33207d61d35587409fb3d04d40681f1, type: 3}
+      - {fileID: 8300000, guid: b364f8b3f3b4ad146a532f57847db4f7, type: 3}
+      - {fileID: 8300000, guid: 1e3b020d11e177e42a17a86d0df9e4f1, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Crash
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: bf54477761115b245b9dda2b707a8f7c, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Die
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: 64d91e6de678e774abf780d4c20fd684, type: 3}
+      - {fileID: 8300000, guid: 21eef35b7f59d4246a15a7d86ce32239, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Change_Filter
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: c204f07e83bf0ad47b92ab353c0c915b, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Get_Hit
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: 7aee96d443b826642b4556aa1512d81b, type: 3}
+      - {fileID: 8300000, guid: 166efcb321e675c4c931d3616cd86afd, type: 3}
+      - {fileID: 8300000, guid: f9c46ee36aa3dec43baa48a41ec465eb, type: 3}
+      - {fileID: 8300000, guid: b06f248a62949834e8f0639cfb691756, type: 3}
+      volume: 1
+      pitchVariance: 0
+  - name: Paddle
+    audioContainer:
+      audioClips:
+      - {fileID: 8300000, guid: 334704279dc218247bda1c48a3ba8029, type: 3}
+      - {fileID: 8300000, guid: 981c30ab64a01144cb451588eb41e2a1, type: 3}
+      - {fileID: 8300000, guid: 9d4a393a612a632438e3ac5a64bf141c, type: 3}
+      - {fileID: 8300000, guid: a87c67b34a97f6c48bbc69a44f4f0973, type: 3}
+      - {fileID: 8300000, guid: 8c968bf70891e9e4ea81ec92795656f6, type: 3}
+      - {fileID: 8300000, guid: 50b0c03beb8c1af449c5fe6cf7f2a458, type: 3}
+      - {fileID: 8300000, guid: 1e0b6a2586d15da4b8c4109760e8f933, type: 3}
+      - {fileID: 8300000, guid: 4a03e0a19e3890844bd16c6c45d20d0d, type: 3}
+      volume: 1
+      pitchVariance: 0
